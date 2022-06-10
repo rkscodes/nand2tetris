@@ -14,5 +14,9 @@ CHIP DMux {
     OUT a, b;
 
     PARTS:
-    // Put your code here:
+    Nand(a=sel, b=sel, out=notsel);
+    // this will work only after you have implemented NOT gate
+    // Not(in=sel, out=notsel); 
+    And(a=in, b=notsel, out=a);
+    And(a=in, b=sel, out=b);
 }
